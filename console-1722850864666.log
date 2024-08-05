@@ -1,0 +1,65 @@
+function show(){
+    console.log(" I am Show ");
+}
+show(); // It goes in callstack (Push)
+VM236:2  I am Show 
+undefined
+show(10,20);
+VM236:2  I am Show 
+undefined
+show(10,20,30,40);
+VM236:2  I am Show 
+undefined
+show();
+VM236:2  I am Show 
+undefined
+show(10, true, "AMit", [20,30]);
+VM236:2  I am Show 
+undefined
+console.dir(show);
+VM584:1 ƒ show()arguments: nullcaller: nulllength: 0name: "show"prototype: {}[[FunctionLocation]]: VM236:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1]
+undefined
+function add(){
+    var sum = 0;
+    for(var i = 0 ; i<arguments.length ; i++){
+        sum = sum + arguments[i]);
+    }
+    return sum;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+VM727:4 Uncaught SyntaxError: Unexpected token ')'
+function add(){
+    var sum = 0;
+    for(var i = 0 ; i<arguments.length ; i++){
+        sum = sum + arguments[i]);
+    }
+    return sum;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+VM729:4 Uncaught SyntaxError: Unexpected token ')'

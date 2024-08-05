@@ -1,0 +1,250 @@
+function add(){
+    var sum = 0;
+    for(var i = 0 ; i<arguments.length ; i++){
+        sum = sum + arguments[i];
+    }
+    return sum;
+}
+undefined
+add();
+0
+add(1,2,3);
+6
+add(1,2,3,4,5);
+15
+function add(){
+    var sum = 0;
+    console.log(typeof arguments);
+    for(var i = 0 ; i<arguments.length ; i++){
+        sum = sum + arguments[i];
+    }
+    return sum;
+}
+undefined
+add();
+VM241:3 object
+0
+function add(){
+    var sum = 0;
+    console.log(typeof arguments);
+    console.log(arguments instanceof Array);
+    for(var i = 0 ; i<arguments.length ; i++){
+        sum = sum + arguments[i];
+    }
+    return sum;
+}
+undefined
+add();
+VM421:3 object
+VM421:4 false
+0
+console.dir(add);
+VM493:1 ƒ add()arguments: nullcaller: nulllength: 0name: "add"prototype: {}[[FunctionLocation]]: VM421:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1]
+undefined
+add(1,2,3,"4",5);
+VM421:3 object
+VM421:4 false
+'645'
+function add(){
+    var sum = 0;
+    //console.log(typeof arguments);
+    //console.log(arguments instanceof Array);
+    for(var i = 0 ; i<arguments.length ; i++){
+        sum = sum + parseInt(arguments[i]);
+    }
+    return sum;
+}
+undefined
+add(1,2,3,"4",5);
+15
+parseInt("Amit");
+NaN
+add(1,"two",3,"4",5);
+NaN
+function add(){
+    var sum = 0;
+    //console.log(typeof arguments);
+    //console.log(arguments instanceof Array);
+    for(var i = 0 ; i<arguments.length ; i++){
+        sum = sum + isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+    }
+    return sum;
+}
+undefined
+add(1,"two",3,"4",5);
+5
+function add(){
+    var sum = 0;
+    //console.log(typeof arguments);
+    //console.log(arguments instanceof Array);
+    for(var i = 0 ; i<arguments.length ; i++){
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+    }
+    return sum;
+}
+undefined
+add(1,"two",3,"4",5);
+13
+function one(){
+    return 1;
+}
+undefined
+function two(){
+    return "2";
+}
+undefined
+add(one, two , 3, "4", "five");
+7
+function add(){
+    var sum = 0;
+    //console.log(typeof arguments);
+    //console.log(arguments instanceof Array);
+    for(var i = 0 ; i<arguments.length ; i++){
+        if(typeof arguments[i] == "function"){
+            arguments[i] = arguments[i]();
+        }
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+    }
+    return sum;
+}
+undefined
+add(one, two , 3, "4", "five");
+10
+add(one, two , 3, "4", "five",[1,"2",3,"four"]);
+11
+var r =[10,20,30];
+undefined
+parseInt(r);
+10
+function add(){
+    var sum = 0;
+    //console.log(typeof arguments);
+    //console.log(arguments instanceof Array);
+    for(var i = 0 ; i<arguments.length ; i++){
+        if(arguments[i] instanceof Array){
+            for(var j = 0; j<arguments[i].length; i++){
+                sum = sum + (isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]));
+            }
+        }
+        else{
+        if(typeof arguments[i] == "function"){
+            arguments[i] = arguments[i]();
+        }
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+        }
+    }
+    return sum;
+}
+undefined
+add(one, two , 3, "4", "five",[1,"2",3,"four"]);
+VM1289:7 Uncaught TypeError: Cannot read properties of undefined (reading 'length')
+    at add (<anonymous>:7:43)
+    at <anonymous>:1:1
+add @ VM1289:7
+(anonymous) @ VM1299:1
+function add(){
+    var sum = 0;
+    //console.log(typeof arguments);
+    //console.log(arguments instanceof Array);
+    for(var i = 0 ; i<arguments.length ; i++){
+        if(arguments[i] instanceof Array){
+            for(var j = 0; j<arguments[i].length; j++){
+                sum = sum + (isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]));
+            }
+        }
+        else{
+        if(typeof arguments[i] == "function"){
+            arguments[i] = arguments[i]();
+        }
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+        }
+    }
+    return sum;
+}
+undefined
+add(one, two , 3, "4", "five",[1,"2",3,"four"]);
+16
+function add(...arg){
+    var sum = 0;
+    //console.log(typeof arguments);
+    //console.log(arguments instanceof Array);
+    for(var i = 0 ; i<arg.length ; i++){
+        if(arg[i] instanceof Array){
+            for(var j = 0; j<arg[i].length; j++){
+                sum = sum + (isNaN(parseInt(arg[i][j]))?0:parseInt(arg[i][j]));
+            }
+        }
+        else{
+        if(typeof arg[i] == "function"){
+            arg[i] = arg[i]();
+        }
+        sum = sum + (isNaN(parseInt(arg[i]))?0:parseInt(arg[i]));
+        }
+    }
+    return sum;
+}
+undefined
+add(one, two , 3, "4", "five",[1,"2",3,"four"]);
+16
+function add(...arg){
+    var sum = 0;
+    console.log(typeof arguments, typeof arg);
+    console.log(arguments instanceof Array, arg instanceof Array);
+    for(var i = 0 ; i<arg.length ; i++){
+        if(arg[i] instanceof Array){
+            for(var j = 0; j<arg[i].length; j++){
+                sum = sum + (isNaN(parseInt(arg[i][j]))?0:parseInt(arg[i][j]));
+            }
+        }
+        else{
+        if(typeof arg[i] == "function"){
+            arg[i] = arg[i]();
+        }
+        sum = sum + (isNaN(parseInt(arg[i]))?0:parseInt(arg[i]));
+        }
+    }
+    return sum;
+}
+undefined
+add(one, two , 3, "4", "five",[1,"2",3,"four"]);
+VM1556:3 object object
+VM1556:4 false true
+16
+var arr = [10,20,30];
+undefined
+typeof arr;
+'object'
+arr instanceof Array;
+true
+arr instanceof Object;
+true
+var obj = {};
+undefined
+typeof obj;
+'object'
+obj instanceof Object;
+true
+obj instanceof Array;
+false
+typeof Array;
+'function'
+typeof Object;
+'function'
+var t = 10;
+undefined
+var t2 = 20;
+undefined
+console.log("T is "+t+" T2 "+t2);
+VM2150:1 T is 10 T2 20
+undefined
+console.log("T is "+t.toString()+" T2 "+t2);
+VM2181:1 T is 10 T2 20
+undefined
+var obj = {id:1001, name:'Amit'};
+undefined
+console.log('OBject is ' +obj);
+VM2346:1 OBject is [object Object]
+undefined
+console.log('OBject is ' ,obj);
+VM2359:1 OBject is  {id: 1001, name: 'Amit'}
+undefined
