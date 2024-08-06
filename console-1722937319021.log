@@ -1,0 +1,372 @@
+// types of function
+undefined
+
+show();
+function show(){
+    console.log("I am the Show ");
+}
+
+VM228:4 I am the Show 
+undefined
+window;
+Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+typeof window;
+'object'
+window.show();
+VM228:4 I am the Show 
+undefined
+show();
+VM228:4 I am the Show 
+undefined
+window.show;
+ƒ show(){
+    console.log("I am the Show ");
+}
+// var a ;
+console.log('A is ', a);
+var a= 10; // a=10
+
+VM590:2 A is  undefined
+undefined
+a;
+10
+function show(){
+    // var w ; // undefined (function level Hoisting)
+    console.log('W is ', w);
+    if(10>2){
+        var w  =100;
+    }
+    console.log('W is ', w);
+}
+undefined
+show();
+VM767:3 W is  undefined
+VM767:7 W is  100
+undefined
+var w = 9900; // Global (Attach with window)
+function show(){
+    // var w ; // undefined (function level Hoisting)
+    
+    console.log('W is ', w);
+    var w = 900; // w = 900;
+    if(10>2){
+        var w  =100; // w= 100;
+    }
+    var w = 200;
+    console.log('W is ', w); // w = 200;
+}
+undefined
+show();
+VM896:5 W is  undefined
+VM896:11 W is  200
+undefined
+w;
+9900
+var w = 9900; // Global (Attach with window)
+function show(){
+    // var w ; // undefined (function level Hoisting)
+    
+    console.log('W is ', w);
+    let w = 900; // w = 900;
+    if(10>2){
+        let w  =100; // w= 100;
+    }
+    let w = 200;
+    console.log('W is ', w); // w = 200;
+}
+VM943:10 Uncaught SyntaxError: Identifier 'w' has already been declared
+var w = 9900; // Global (Attach with window)
+function show(){
+    // var w ; // undefined (function level Hoisting)
+    
+    console.log('W is ', w);
+    let w = 900; // w = 900;
+    if(10>2){
+        let w  =100; // w= 100;
+    }
+   // let w = 200;
+    console.log('W is ', w); // w = 200;
+}
+undefined
+show();
+VM947:5 Uncaught ReferenceError: Cannot access 'w' before initialization
+    at show (<anonymous>:5:26)
+    at <anonymous>:1:1
+show @ VM947:5
+(anonymous) @ VM965:1
+var w = 9900; // Global (Attach with window)
+function show(){
+    // var w ; // undefined (function level Hoisting)
+    
+    //console.log('W is ', w);
+    let w = 900; // w = 900;
+    if(10>2){
+        console.log('W is ', w);
+        let w  =100; // w= 100;
+    }
+   // let w = 200;
+   // console.log('W is ', w); // w = 200;
+}
+undefined
+show();
+VM975:8 Uncaught ReferenceError: Cannot access 'w' before initialization
+    at show (<anonymous>:8:30)
+    at <anonymous>:1:1
+show @ VM975:8
+(anonymous) @ VM994:1
+var w = 9900; // Global (Attach with window)
+function show(){
+    // var w ; // undefined (function level Hoisting)
+    
+    console.log('W is ', w);
+    //let w = 900; // w = 900;
+    if(10>2){
+        console.log('W is ', w);
+        let w  =100; // w= 100;
+    }
+   // let w = 200;
+   // console.log('W is ', w); // w = 200;
+}
+undefined
+show();
+VM1002:5 W is  9900
+VM1002:8 Uncaught ReferenceError: Cannot access 'w' before initialization
+    at show (<anonymous>:8:30)
+    at <anonymous>:1:1
+show @ VM1002:8
+(anonymous) @ VM1020:1
+//var w = 9900; // Global (Attach with window)
+function show(){
+    // var w ; // undefined (function level Hoisting)
+    
+    console.log('W is ', w);
+    //let w = 900; // w = 900;
+    if(10>2){
+        console.log('W is ', w);
+        let w  =100; // w= 100;
+    }
+   // let w = 200;
+   // console.log('W is ', w); // w = 200;
+}
+undefined
+show();
+VM1026:5 W is  9900
+VM1026:8 Uncaught ReferenceError: Cannot access 'w' before initialization
+    at show (<anonymous>:8:30)
+    at <anonymous>:1:1
+show @ VM1026:8
+(anonymous) @ VM1031:1
+//var w = 9900; // Global (Attach with window)
+function show(){
+    // var w ; // undefined (function level Hoisting)
+    
+    console.log('W is ', w);
+    //let w = 900; // w = 900;
+    if(10>2){
+       // console.log('W is ', w);
+        let w  =100; // w= 100;
+    }
+   // let w = 200;
+   // console.log('W is ', w); // w = 200;
+}
+undefined
+show();
+VM1037:5 W is  9900
+undefined
+var w = 9900; // Global (Attach with window)
+function show(){
+    // var w ; // undefined (function level Hoisting)
+    
+    console.log('W is ', w);
+    //let w = 900; // w = 900;
+    if(10>2){
+       // console.log('W is ', w);
+        let w  =100; // w= 100;
+    }
+   // let w = 200;
+   // console.log('W is ', w); // w = 200;
+}
+undefined
+show();
+VM1063:5 W is  9900
+undefined
+var w = 9900; // Global (Attach with window)
+function show(){
+    // var w ; // undefined (function level Hoisting)
+    
+    console.log('W is ', w2);
+    //let w2 = 900; // w = 900;
+    if(10>2){
+       // console.log('W is ', w);
+        let w2  =100; // w= 100;
+    }
+   // let w = 200;
+   // console.log('W is ', w); // w = 200;
+}
+undefined
+show();
+VM1098:5 Uncaught ReferenceError: w2 is not defined
+    at show (<anonymous>:5:26)
+    at <anonymous>:1:1
+show @ VM1098:5
+(anonymous) @ VM1116:1
+var w = 9900; // Global (Attach with window)
+function show(){
+    // var w ; // undefined (function level Hoisting)
+    
+    console.log('W is ', w);
+    let w = 900; // w = 900;
+    if(10>2){
+       // console.log('W is ', w);
+        let w  =100; // w= 100;
+    }
+   // let w = 200;
+   // console.log('W is ', w); // w = 200;
+}
+undefined
+show();
+VM1129:5 Uncaught ReferenceError: Cannot access 'w' before initialization
+    at show (<anonymous>:5:26)
+    at <anonymous>:1:1
+show @ VM1129:5
+(anonymous) @ VM1147:1
+var a = 10; // Hoisting (Global Scope)
+function disp(){
+    console.log(a); // Lexical Scope
+    if(10>2){
+        console.log(a); // Error
+        // TDZ
+        let a = 20;
+        console.log(a);
+    }
+}
+undefined
+disp();
+VM1357:3 10
+VM1357:5 Uncaught ReferenceError: Cannot access 'a' before initialization
+    at disp (<anonymous>:5:21)
+    at <anonymous>:1:1
+disp @ VM1357:5
+(anonymous) @ VM1375:1
+var a = 10; // Hoisting (Global Scope)
+function disp(){
+    console.log(a); // Lexical Scope
+    if(10>2){
+        //console.log(a); // Error
+        // TDZ
+        let a = 20;
+        console.log(a);
+    }
+}
+undefined
+disp();
+VM1381:3 10
+VM1381:8 20
+undefined
+const MAX = 100;
+undefined
+MAX++;
+VM1471:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:4
+(anonymous) @ VM1471:1
+const ARR = [10,20,30];
+undefined
+ARR[0]++;
+10
+ARR;
+(3) [11, 20, 30]
+ARR = [90,100];
+VM1584:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:5
+(anonymous) @ VM1584:1
+var t = function(){
+    return 1000;
+}
+undefined
+typeof t;
+'function'
+t;
+ƒ (){
+    return 1000;
+}
+t();
+1000
+// button.onclick = function(){}
+undefined
+var r = 100;
+undefined
+var t = function(){
+    return 1000;
+}
+undefined
+t2();
+var t2 = function(){
+    return 1000;
+}
+VM1817:1 Uncaught TypeError: t2 is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM1817:1
+function Calc(){
+var add = function(x,y){
+    return x  + y;
+}
+    var sub = function(x,y){
+        return x- y;
+    }
+    return add, sub;
+}
+undefined
+var y = Calc();
+undefined
+y;
+ƒ (x,y){
+        return x- y;
+    }
+function Calc(){
+var add = function(x,y){
+    return x  + y;
+}
+    var sub = function(x,y){
+        return x- y;
+    }
+    return [add, sub];
+}
+undefined
+Calc();
+(2) [ƒ, ƒ]0: ƒ (x,y)arguments: nullcaller: nulllength: 2name: "add"prototype: {}[[FunctionLocation]]: VM2034:2[[Prototype]]: ƒ ()[[Scopes]]: Scopes[2]1: ƒ (x,y)length: 2[[Prototype]]: Array(0)
+Calc()[0](10,20);
+30
+Calc()[1](10,20);
+-10
+function Calc(){
+var add = function addition(x,y){
+    return x  + y;
+}
+    var sub = function subtraction(x,y){
+        return x- y;
+    }
+    return [add, sub];
+}
+undefined
+Calc();
+(2) [ƒ, ƒ]0: ƒ addition(x,y)1: ƒ subtraction(x,y)length: 2[[Prototype]]: Array(0)
+function Calc(){
+var add = function(x,y){
+    return x  + y;
+}
+    var sub = function(x,y){
+        return x- y;
+    }
+    return {add, sub};
+}
+undefined
+Calc();
+{add: ƒ, sub: ƒ}add: ƒ (x,y)sub: ƒ (x,y)[[Prototype]]: Object
+Calc()['add'](10,20);
+30
+var t = Calc();
+undefined
+t;
+{add: ƒ, sub: ƒ}
+t.add(10,20);
+30
