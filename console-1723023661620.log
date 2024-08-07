@@ -1,0 +1,72 @@
+// Closure
+undefined
+function init(){
+var count = 0; 
+function counter(){
+   
+    count++;
+    return count;
+}
+    return counter;
+}
+undefined
+var fn = init();
+undefined
+fn;
+ƒ counter(){
+   
+    count++;
+    return count;
+}
+fn();
+1
+fn();
+2
+fn();
+3
+fn();
+4
+fn();
+5
+count;
+VM171:1 Uncaught ReferenceError: count is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM171:1
+function init(){
+var count = 0; 
+return function (){
+   
+    count++;
+    return count;
+}
+   
+}
+undefined
+var t = init();
+undefined
+t();
+1
+t();
+2
+t();
+3
+function init(count){
+ 
+return function (){
+   
+    count++;
+    return count;
+}
+   
+}
+undefined
+var e = init(0);
+undefined
+e();
+1
+e();
+2
+e();
+3
+e();
+4

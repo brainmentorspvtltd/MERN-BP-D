@@ -1,0 +1,49 @@
+// Closure
+undefined
+// count Value return 
+undefined
+function counter(){
+    var count = 0;
+    count++;
+    return count;
+}
+undefined
+counter(); // Stack Push
+1
+counter(); // Stack Push
+1
+counter(); // Stack Push
+1
+counter(); // Stack Push
+1
+ var count = 0; // Global 
+function counter(){
+   
+    count++;
+    return count;
+}
+undefined
+counter(); // Stack Push
+1
+counter(); // Stack Push
+2
+counter(); // Stack Push
+3
+counter(); // Stack Push
+4
+counter(); // Stack Push
+5
+count = 0;
+0
+counter(); // Stack Push
+1
+counter(); // Stack Push
+2
+counter(); // Stack Push
+3
+count = "One";
+'One'
+counter(); // Stack Push
+NaN
+counter(); // Stack Push
+NaN
