@@ -1,0 +1,117 @@
+// JS Functions are first class Citizen
+// Higher Order Function
+// CallBack Function
+undefined
+// 1. Function can be store in a Variable
+undefined
+// 2. Act as Type
+undefined
+// 3. Function can pass as an argument , also can be return
+undefined
+var b = 100;
+var a = function(){
+    return 1000;
+}
+undefined
+typeof a;
+'function'
+typeof b;
+'number'
+b++;
+100
+b;
+101
+a();
+1000
+function printWeatherDetail(){
+    console.log('Print Weather Info ');
+}
+function getWeatherInfo(fn){
+    // Make a Network Call (Time Take (2 to 5) Sec)
+    setTimeout(fn, 3000);
+}
+getWeatherInfo(printWeatherDetail);
+undefined
+VM898:2 Print Weather Info 
+// HOC - Which return a function
+function Calc(){
+    var add = function(x,y){
+        return x + y;
+    }
+    return add;
+}
+undefined
+Calc();
+ƒ (x,y){
+        return x + y;
+    }
+Calc()(10,20);
+30
+// HOF - Which return a function
+function Calc(fn){
+    var add = function(x,y){
+        return x + y + fn(x,y);
+    }
+    return add;
+}
+var e = Calc(function(a,b){
+    return a * b;
+})
+undefined
+e;
+ƒ (x,y){
+        return x + y + fn(x,y);
+    }
+e(2,3)
+11
+typeof e;
+'function'
+// HOF - Which return a function
+function Calc(fn){
+    var add = function(x,y){
+        console.log('I am Add ');
+        return x + y + fn(x,y);
+    }
+    console.log('I am Calc ');
+    return add;
+}
+var e = Calc(function(a,b){
+    return a * b;
+})
+VM1293:7 I am Calc 
+undefined
+e(2,3);
+VM1293:4 I am Add 
+11
+// HOF - Which return a function
+function Calc(fn){
+    var add = function(x,y){
+        console.log('I am Add ');
+        return x + y + fn(x,y);
+    }
+    console.log('I am Calc ');
+    return add;
+}
+
+undefined
+function mul(a,b){
+    return a * b;
+}
+var e = Calc(mul);
+VM1328:7 I am Calc 
+undefined
+e;
+ƒ (x,y){
+        console.log('I am Add ');
+        return x + y + fn(x,y);
+    }
+typeof e;
+'function'
+e(2,3);
+VM1328:4 I am Add 
+11
+typeof e;
+'function'
+console.dir(e);
+VM1535:1 ƒ add(x,y)arguments: nullcaller: nulllength: 2name: "add"prototype: {}[[FunctionLocation]]: VM1328:3[[Prototype]]: ƒ ()[[Scopes]]: Scopes[2]0: Closure (Calc)fn: ƒ mul(a,b)[[Prototype]]: Object1: Global {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
