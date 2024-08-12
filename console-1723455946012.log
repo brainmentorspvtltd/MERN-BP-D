@@ -1,0 +1,76 @@
+var arr = [10,20,30];
+undefined
+arr.length;
+3
+arr.push(1000);
+4
+arr;
+(4) [10, 20, 30, 1000]
+arr.length=2;
+2
+arr;
+(2) [10, 20]
+var g = 10;
+undefined
+typeof g;
+'number'
+var name = "Amit";
+undefined
+typeof name;
+'string'
+var f = new String("Abcd");
+undefined
+typeof f;
+'object'
+name;
+'Amit'
+f;
+String {'Abcd'}
+f instanceof String;
+true
+f instanceof Object;
+true
+name instanceof String;
+false
+// AutoBoxing
+undefined
+name.toUpperCase();
+'AMIT'
+typeof name;
+'string'
+10 == '10';
+true
+10 === '10';
+false
+var t;
+undefined
+typeof t;
+'undefined'
+t;
+undefined
+t2;
+VM780:1 Uncaught ReferenceError: t2 is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM780:1
+var e = 10;
+undefined
+e();
+VM817:1 Uncaught TypeError: e is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM817:1
+var f= null;
+undefined
+typeof f;
+'object'
+f.x=10;
+VM886:1 Uncaught TypeError: Cannot set properties of null (setting 'x')
+    at <anonymous>:1:4
+(anonymous) @ VM886:1
+var g = 10;
+undefined
+typeof g;
+'number'
+g = null;
+null
+typeof g;
+'object'

@@ -1,0 +1,149 @@
+// var obj = {key:value, key:value}
+var obj = {
+    arr:[10,20,3,8,7,50],
+    even:[],
+    odd:[],
+    // fillEvenOdd:function(){}
+    fillEvenOdd(){
+        
+    }
+}
+undefined
+var arr = [10,9,40,60,2,90];
+undefined
+var y = arr.filter(function(val){
+    return val>40
+});
+undefined
+y;
+(2) [60, 90]
+var y = arr.filter(function(val){
+    return true;
+});
+undefined
+t;
+VM353:1 Uncaught ReferenceError: t is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM353:1
+y;
+(6) [10, 9, 40, 60, 2, 90]
+y==arr;
+false
+var y = arr.filter((val)=>true);
+    
+
+undefined
+y;
+(6) [10, 9, 40, 60, 2, 90]
+var y = arr.filter(val=>true);
+    
+
+undefined
+// var obj = {key:value, key:value}
+var obj = {
+    arr:[10,20,3,8,7,50],
+    even:[],
+    odd:[],
+    // fillEvenOdd:function(){}
+    fillEvenOdd(){
+        even = arr.filter(function(val){
+            return val % 2 ==0;
+        }
+        odd = arr.filter(function(val){
+            return val % 2 !=0;
+        }
+    }
+}
+VM677:10 Uncaught SyntaxError: missing ) after argument list
+// var obj = {key:value, key:value}
+var obj = {
+    arr:[10,20,3,8,7,50],
+    even:[],
+    odd:[],
+    // fillEvenOdd:function(){}
+    fillEvenOdd(){
+        even = arr.filter(function(val){
+            return val % 2 ==0;
+        });
+        odd = arr.filter(function(val){
+            return val % 2 !=0;
+        });
+    }
+}
+undefined
+obj.fillEvenOdd();
+undefined
+obj.even;
+[]
+obj.odd;
+[]
+// var obj = {key:value, key:value}
+var obj = {
+    arr:[10,20,3,8,7,50],
+    even:[],
+    odd:[],
+    // fillEvenOdd:function(){}
+    fillEvenOdd(){
+        even = arr.filter(function(val){
+            return val % 2 ==0;
+        });
+        odd = arr.filter(function(val){
+            return val % 2 !=0;
+        });
+        console.log(even , odd);
+    }
+}
+undefined
+obj.fillEvenOdd();
+VM871:14 (5) [10, 40, 60, 2, 90] [9]
+undefined
+obj.even;
+[]
+obj.odd;
+[]
+even;
+(5) [10, 40, 60, 2, 90]
+odd;
+[9]
+arr;
+(6) [10, 9, 40, 60, 2, 90]
+// var obj = {key:value, key:value}
+var obj = {
+    arr:[10,20,3,8,7,50],
+    even:[],
+    odd:[],
+    // fillEvenOdd:function(){}
+    fillEvenOdd(){
+        even = obj.arr.filter(function(val){
+            return val % 2 ==0;
+        });
+        odd = obj.arr.filter(function(val){
+            return val % 2 !=0;
+        });
+        console.log(even , odd);
+    }
+}
+undefined
+obj.fillEvenOdd();
+VM1023:14 (4) [10, 20, 8, 50] (2) [3, 7]
+undefined
+// var obj = {key:value, key:value}
+var obj = {
+    arr:[10,20,3,8,7,50],
+    even:[],
+    odd:[],
+    // fillEvenOdd:function(){}
+    fillEvenOdd(){
+        even = this.arr.filter(function(val){
+            return val % 2 ==0;
+        });
+        odd = this.arr.filter(function(val){
+            return val % 2 !=0;
+        });
+        console.log(even , odd);
+    }
+}
+undefined
+obj.fillEvenOdd();
+VM1055:14 (4) [10, 20, 8, 50] (2) [3, 7]
+undefined

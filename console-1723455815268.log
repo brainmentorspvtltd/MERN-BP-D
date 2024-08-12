@@ -1,0 +1,112 @@
+var x = function(){
+    console.log('X Function ');
+}
+undefined
+x();
+VM130:2 X Function 
+undefined
+var e = x;
+undefined
+e();
+VM130:2 X Function 
+undefined
+(function(a,b){
+   return a + b; 
+})(10,20);
+30
+function init(){
+    var c= 0;
+    return function count(){
+    c++;
+    return c;
+}
+}
+undefined
+var d = init();
+undefined
+d;
+ƒ count(){
+    c++;
+    return c;
+}
+d();
+1
+d();
+2
+d();
+3
+d();
+4
+d();
+5
+d = init();
+ƒ count(){
+    c++;
+    return c;
+}
+d();
+1
+d();
+2
+d();
+3
+var d = function (){
+    var c= 0;
+    return function count(){
+    c++;
+    return c;
+}
+}();
+undefined
+d();
+1
+d();
+2
+d();
+3
+d();
+4
+d();
+5
+function scope(){
+    var i = 5;
+    function(){
+    for(var j = 1; j<=i; j++){
+       console.log(j); 
+    }
+    }();
+    console.log(j);
+}
+VM734:3 Uncaught SyntaxError: Function statements require a function name
+function scope(){
+    var i = 5;
+    (function(){
+    for(var j = 1; j<=i; j++){
+       console.log(j); 
+    }
+    })();
+    console.log(j);
+}
+undefined
+scope();
+VM738:5 1
+VM738:5 2
+VM738:5 3
+VM738:5 4
+VM738:5 5
+VM738:8 Uncaught ReferenceError: j is not defined
+    at scope (<anonymous>:8:17)
+    at <anonymous>:1:1
+scope @ VM738:8
+(anonymous) @ VM767:1
+function add(a,b){
+    return a +b;
+}
+undefined
+const addition = (a,b)=>a+b;
+undefined
+const addition = (a,b)=>{
+    console.log('Addition ');
+    return a+b;
+}
+undefined

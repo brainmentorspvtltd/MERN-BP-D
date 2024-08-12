@@ -1,0 +1,19 @@
+// var , let, const
+undefined
+'use strict'
+a=10; // accidental global
+VM127:2 Uncaught ReferenceError: a is not defined
+    at <anonymous>:2:2
+(anonymous) @ VM127:2
+var x = 10;
+undefined
+window.x;
+10
+this;
+Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+window == this;
+true
+let b = 20;
+undefined
+window.b;
+undefined
