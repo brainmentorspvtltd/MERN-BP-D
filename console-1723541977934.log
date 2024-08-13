@@ -1,0 +1,301 @@
+var obj = {
+    arr : [10,20,30,7,5,1],
+    even:[], 
+    odd:[],
+    fillEvenOdd(){
+        even = arr.filter(val=>val%2==0)
+        odd = arr.filter(val=>val%2==0)
+    }
+}
+undefined
+obj.fillEvenOdd();
+VM168:6 Uncaught ReferenceError: arr is not defined
+    at Object.fillEvenOdd (<anonymous>:6:9)
+    at <anonymous>:1:5
+fillEvenOdd @ VM168:6
+(anonymous) @ VM197:1
+var obj = {
+    arr : [10,20,30,7,5,1],
+    even:[], 
+    odd:[],
+    fillEvenOdd(){
+        obj.even = obj.arr.filter(val=>val%2==0)
+        obj.odd = obj.arr.filter(val=>val%2==0)
+    }
+}
+undefined
+obj.fillEvenOdd();
+undefined
+obj.even;
+(3) [10, 20, 30]
+obj.odd;
+(3) [10, 20, 30]
+var obj = {
+    arr : [10,20,30,7,5,1],
+    even:[], 
+    odd:[],
+    fillEvenOdd(){
+        this.even = this.arr.filter(val=>val%2==0)
+        this.odd = this.arr.filter(val=>val%2==0)
+    }
+}
+undefined
+obj.fillEvenOdd(); // this - keyword (Hold the current calling object reference)
+undefined
+var obj = {
+    arr : [10,20,30,7,5,1],
+    even:[], 
+    odd:[],
+    fillEvenOdd(){
+        this.even = this.arr.filter(val=>val%2==0)
+        this.odd = this.arr.filter(val=>val%2!=0)
+    }
+}
+undefined
+obj.fillEvenOdd(); // this - keyword (Hold the current calling object reference)
+undefined
+obj.even;
+(3) [10, 20, 30]
+obj.odd;
+(3) [7, 5, 1]
+obj.even=[];
+[]
+obj.odd=[];
+[]
+var obj = {
+    arr : [10,20,30,7,5,1],
+    even:[], 
+    odd:[],
+    fillEvenOdd(){
+         this.arr.forEach(function(val){
+            if(val%2==0){
+                this.even.push(val);
+            }
+             else{
+             this.odd.push(val);
+             }
+        });
+      
+    }
+}
+undefined
+obj.fillEvenOdd();
+VM777:8 Uncaught TypeError: Cannot read properties of undefined (reading 'push')
+    at <anonymous>:8:27
+    at Array.forEach (<anonymous>)
+    at Object.fillEvenOdd (<anonymous>:6:19)
+    at <anonymous>:1:5
+(anonymous) @ VM777:8
+fillEvenOdd @ VM777:6
+(anonymous) @ VM810:1
+var obj = {
+    arr : [10,20,30,7,5,1],
+    even:[], 
+    odd:[],
+    fillEvenOdd(){
+        var that = this;
+         this.arr.forEach(function(val){
+            if(val%2==0){
+                that.even.push(val);
+            }
+             else{
+             that.odd.push(val);
+             }
+        });
+      
+    }
+}
+undefined
+obj.fillEvenOdd();
+undefined
+obj.even;
+(3) [10, 20, 30]
+odd.odd;
+VM889:1 Uncaught ReferenceError: odd is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM889:1
+obj.odd;
+(3) [7, 5, 1]
+var obj = {
+    arr : [10,20,30,7,5,1],
+    even:[], 
+    odd:[],
+    fillEvenOdd(){
+        // this
+        this.even =  this.arr.filter(function(val){
+            // this?
+           return val%2==0;
+        });
+      
+    }
+}
+undefined
+var obj = {
+    arr : [10,20,30,7,5,1],
+    even:[], 
+    odd:[],
+    fillEvenOdd(){
+        // this
+         this.arr.forEach((val)=>{
+            if(val%2==0){
+                this.even.push(val);
+            }
+             else{
+             this.odd.push(val);
+             }
+        });
+      
+    }
+}
+undefined
+obj.fillEvenOdd();
+undefined
+obj.even;
+(3) [10, 20, 30]
+obj.odd;
+(3) [7, 5, 1]
+var obj = {
+    arr : [10,20,30,7,5,1],
+    even:[], 
+    odd:[],
+    fillEvenOdd(){
+        var that = this;
+         this.arr.forEach(function(val){
+             // this - arr
+             
+            if(val%2==0){
+                that.even.push(val * this.length);
+            }
+             else{
+             that.odd.push(val);
+             }
+        });
+      
+    }
+}
+undefined
+function whoAmI(){
+    console.log('MY Name is ', this.name);
+}
+undefined
+var name = 'Amit';
+undefined
+whoAmI();
+VM1286:2 MY Name is  Amit
+undefined
+window.name;
+'Amit'
+window.whoAmI;
+ƒ whoAmI(){
+    console.log('MY Name is ', this.name);
+}
+whoAmI(); // window.whoAmI();
+// this binding
+VM1286:2 MY Name is  Amit
+undefined
+// Default Binding
+undefined
+function whoAmI(age, city){
+    console.log('MY Name is ', this.name, 'Age ', age, 'City ' , city);
+}
+undefined
+whoAmI(20,'Delhi');
+VM1666:2 MY Name is  Amit Age  20 City  Delhi
+undefined
+name = 'Ram';
+'Ram'
+whoAmI(20,'Delhi');
+VM1666:2 MY Name is  Ram Age  20 City  Delhi
+undefined
+var e = new whoAmI(22, 'Mumbai');
+VM1666:2 MY Name is  undefined Age  22 City  Mumbai
+undefined
+function whoAmI(age, city){
+    console.log('MY Name is ', this, 'Age ', age, 'City ' , city);
+}
+undefined
+var e = new whoAmI(22, 'Mumbai');
+VM1828:2 MY Name is  whoAmI {} Age  22 City  Mumbai
+undefined
+typeof e;
+'object'
+e instanceof whoAmI;
+true
+typeof whoAmI;
+'function'
+var w = new Array(10);
+undefined
+typeof w;
+'object'
+w instanceof Array;
+true
+typeof Array;
+'function'
+var t = [10,20,30,90,100,20];
+undefined
+t.forEach(e=>console.log(e));
+VM2235:1 10
+VM2235:1 20
+VM2235:1 30
+VM2235:1 90
+VM2235:1 100
+VM2235:1 20
+undefined
+t.filter(e=>e>20);
+(3) [30, 90, 100]
+t.filter(e=>true);
+(6) [10, 20, 30, 90, 100, 20]
+t=t.filter(e=>e<=30);
+(4) [10, 20, 30, 20]
+var t = [10,20,30,90,100,20];
+undefined
+t.pop();
+20
+t;
+(5) [10, 20, 30, 90, 100]
+t.shift();
+10
+t;
+(4) [20, 30, 90, 100]
+t.splice(1,2);
+(2) [30, 90]
+var t = [10,20,30,90,100,20];
+undefined
+t.splice(1);
+(5) [20, 30, 90, 100, 20]
+var t = [10,20,30,90,100,20];
+undefined
+t.splice(0);
+(6) [10, 20, 30, 90, 100, 20]
+t;
+[]
+var t = [10,20,30,90,100,20];
+undefined
+t.length=0;
+0
+t;
+[]
+var t = [10,20,30,90,100,20];
+undefined
+t.push(1000);
+7
+t.unshift(2000);
+8
+t;
+(8) [2000, 10, 20, 30, 90, 100, 20, 1000]
+t.splice(1,0,888);
+[]
+t;
+(9) [2000, 888, 10, 20, 30, 90, 100, 20, 1000]
+t.splice(1,1,7777);
+[888]
+t;
+(9) [2000, 7777, 10, 20, 30, 90, 100, 20, 1000]
+t.splice(1,1,7777,6666,4444);
+[7777]
+t;
+(11) [2000, 7777, 6666, 4444, 10, 20, 30, 90, 100, 20, 1000]
+t = t.filter(e=>e<=100)
+(6) [10, 20, 30, 90, 100, 20]
+t;
+(6) [10, 20, 30, 90, 100, 20]
