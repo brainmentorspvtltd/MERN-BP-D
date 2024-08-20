@@ -1,0 +1,132 @@
+var arr = [10,20,30,90,100,1,2];
+undefined
+arr.forEach(e=>console.log(e));
+VM206:1 10
+VM206:1 20
+VM206:1 30
+VM206:1 90
+VM206:1 100
+VM206:1 1
+VM206:1 2
+undefined
+arr.forEach((e, i)=>console.log(e,i));
+VM243:1 10 0
+VM243:1 20 1
+VM243:1 30 2
+VM243:1 90 3
+VM243:1 100 4
+VM243:1 1 5
+VM243:1 2 6
+undefined
+arr.forEach((e, i, a)=>console.log(e,i,a));
+VM277:1 10 0 (7) [10, 20, 30, 90, 100, 1, 2]
+VM277:1 20 1 (7) [10, 20, 30, 90, 100, 1, 2]
+VM277:1 30 2 (7) [10, 20, 30, 90, 100, 1, 2]
+VM277:1 90 3 (7) [10, 20, 30, 90, 100, 1, 2]
+VM277:1 100 4 (7) [10, 20, 30, 90, 100, 1, 2]
+VM277:1 1 5 (7) [10, 20, 30, 90, 100, 1, 2]
+VM277:1 2 6 (7) [10, 20, 30, 90, 100, 1, 2]
+undefined
+Array.prototype.forEach;
+ƒ forEach() { [native code] }
+arr;
+(7) [10, 20, 30, 90, 100, 1, 2]
+arr.find(e=>e==20);
+20
+arr.find(e=>e==2000);
+undefined
+arr.findIndex(e=>e==2000);
+-1
+arr.findIndex(e=>e==20);
+1
+arr.findLastIndex(e=>e==20);
+1
+arr;
+(7) [10, 20, 30, 90, 100, 1, 2]
+arr.push(20);
+8
+arr;
+(8) [10, 20, 30, 90, 100, 1, 2, 20]
+arr.findLastIndex(e=>e==20);
+7
+arr.findIndex(e=>e==20);
+1
+arr.filter(e=>e>30);
+(2) [90, 100]
+arr.filter(e=>true);
+(8) [10, 20, 30, 90, 100, 1, 2, 20]
+arr = arr.filter(e=>e<20)
+(3) [10, 1, 2]
+arr;
+(3) [10, 1, 2]
+var arr = [10,20,30,90,100,1,2];
+undefined
+arr.map(e=>e*2);
+(7) [20, 40, 60, 180, 200, 2, 4]
+arr.map(e=>e);
+(7) [10, 20, 30, 90, 100, 1, 2]
+arr.map(e=>`<li>${e}</li>`);
+(7) ['<li>10</li>', '<li>20</li>', '<li>30</li>', '<li>90</li>', '<li>100</li>', '<li>1</li>', '<li>2</li>']
+arr;
+(7) [10, 20, 30, 90, 100, 1, 2]
+arr.reduce((acc,e)=>acc+e)
+253
+arr.reduce((acc,e)=>acc+e, 0)
+253
+arr.reduce((acc,e)=>{
+    if(e>30){
+        acc.push(e);
+    }
+    return acc;
+}, [])
+(2) [90, 100]
+arr;
+(7) [10, 20, 30, 90, 100, 1, 2]
+arr.sort();
+(7) [1, 10, 100, 2, 20, 30, 90]
+arr.sort((a,b)=>a-b);
+(7) [1, 2, 10, 20, 30, 90, 100]
+arr.sort((a,b)=>b-a);
+(7) [100, 90, 30, 20, 10, 2, 1]
+var names= ['Ram', 'amit','Shyam','tim','Vim'];
+undefined
+names.sort();
+(5) ['Ram', 'Shyam', 'Vim', 'amit', 'tim']
+"Amit".localeCompare("Ram");
+-1
+"Ram".localeCompare("amit");
+1
+"Ram".localeCompare("Amit");
+1
+"Amit".localeCompare("Amit");
+0
+"amit".localeCompare("Amit");
+-1
+"amit".localeCompare("Anil");
+-1
+"amit".toLowerCase().localeCompare("Amit".lowerCase()
+                                  );
+VM1625:1 Uncaught TypeError: "Amit".lowerCase is not a function
+    at <anonymous>:1:43
+(anonymous) @ VM1625:1
+"amit".toLowerCase().localeCompare("Amit".toLowerCase()
+                                  );
+0
+var names= ['Ram', 'amit','Shyam','tim','Vim'];
+undefined
+names.sort((a,b)=>a.toLowerCase().localeCompare(b.toLowerCase()));
+(5) ['amit', 'Ram', 'Shyam', 'tim', 'Vim']
+var name = 'Amit';
+undefined
+name.toUpperCase();
+'AMIT'
+name;
+'Amit'
+names;
+(5) ['amit', 'Ram', 'Shyam', 'tim', 'Vim']
+arr;
+(7) [100, 90, 30, 20, 10, 2, 1]
+arr.map(e=>e*2).filter(e=>e>20);
+(4) [200, 180, 60, 40]
+var emps = [{id:1001, name:"Ram", salary:9999}, {id:1002, name:"Tom", salary:2999}, {id:1003, name:"Kim", salary:19999}]
+undefined

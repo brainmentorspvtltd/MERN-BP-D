@@ -1,0 +1,50 @@
+// Memoization
+undefined
+// result cache 
+undefined
+var cache = {};
+function cube(num){
+    if(cache[num]){
+        return cache[num];
+    }
+    // Large CPU Computation
+   for(var i = 1 ; i<=100000; i++){
+       for(var j = 1; j<=10000; j++){
+           
+       }
+   }
+    var r = num **3;
+    cache[num] = r;
+    return cache[num];
+}
+undefined
+cache;
+{}
+cube(3);
+
+27
+Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+cube(3);
+27
+cache;
+{3: 27}
+function curry(a){
+    return function(b){
+        return function(c){
+            return a + b + c;
+        }
+    }
+}
+undefined
+curry('oil')('onion')('tomato');
+'oiloniontomato'
+function curry(a,e,f){
+    // Logic a , e , f
+    return function(b){
+        // logic b  + a + e + f
+        return function(c){
+            return a + b + c;
+        }
+    }
+}
+undefined
