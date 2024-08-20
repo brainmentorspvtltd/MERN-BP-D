@@ -1,0 +1,15 @@
+Given an array of numbers,   create a new array with each number doubled. Then  create another  new array of only the doubled numbers that are greater than 10.
+
+Given an array of objects with a name property, sort the array by the names in alphabetical order.
+
+Given an array of numbers,  find the maximum number in the array.
+
+Given an array of numbers,  check if there is at least one negative number in the array.
+
+Given an array of strings,   check if all strings have a length greater than 3.
+
+Given an array of user objects with age property, get users older than 18, then  get an array of their names.
+
+Given an array of strings,  count the occurrences of each string in the array.
+
+Given an array of numbers,  square each number, then  keep numbers greater than 20, and finally to find their product.
