@@ -1,0 +1,53 @@
+var arr = [1,2,3,4,5,6];
+undefined
+arr.map(e=>e*2).filter(e=>e>10);
+[12]
+arr;
+(6) [1, 2, 3, 4, 5, 6]
+arr.reduce((max, e)=>{
+    if(e>max){
+        max = e;
+    }
+    return max;
+},0);
+6
+arr.push(-1);
+7
+arr.push(22);
+8
+arr.push(-3);
+9
+arr'
+VM465:1 Uncaught SyntaxError: Invalid or unexpected token
+arr;
+(9) [1, 2, 3, 4, 5, 6, -1, 22, -3]
+arr.some(e=>e<0);
+true
+var names = ["amit", "ramesh", "shyam"];
+undefined
+names.every(e=>e.length()>3);
+VM763:1 Uncaught TypeError: e.length is not a function
+    at <anonymous>:1:18
+    at Array.every (<anonymous>)
+    at <anonymous>:1:7
+(anonymous) @ VM763:1
+(anonymous) @ VM763:1
+names.every(e=>e.length>3);
+true
+var users = [{name:'Ram', age:18}, {name:'Tom', age:16},{name:'Tim', age:23}];
+
+undefined
+users.filter(e=>e.age>=18).map(e=>e.name);
+(2) ['Ram', 'Tim']
+var names = ["amit", "ramesh", "shyam", "amit", "ramesh"];
+undefined
+names.reduce((acc, e)=>{
+    if(acc[e]){
+        acc[e]++;
+    }
+    else{
+        acc[e] = 1;
+    }
+    return acc;
+}, {});
+{amit: 2, ramesh: 2, shyam: 1}

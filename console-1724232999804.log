@@ -1,0 +1,20 @@
+var str = "Best Training Company Brain Mentors";
+undefined
+str.split('');
+(35) ['B', 'e', 's', 't', ' ', 'T', 'r', 'a', 'i', 'n', 'i', 'n', 'g', ' ', 'C', 'o', 'm', 'p', 'a', 'n', 'y', ' ', 'B', 'r', 'a', 'i', 'n', ' ', 'M', 'e', 'n', 't', 'o', 'r', 's']0: "B"1: "e"2: "s"3: "t"4: " "5: "T"6: "r"7: "a"8: "i"9: "n"10: "i"11: "n"12: "g"13: " "14: "C"15: "o"16: "m"17: "p"18: "a"19: "n"20: "y"21: " "22: "B"23: "r"24: "a"25: "i"26: "n"27: " "28: "M"29: "e"30: "n"31: "t"32: "o"33: "r"34: "s"length: 35[[Prototype]]: Array(0)
+var arr = str.split('');
+undefined
+arr;
+(35) ['B', 'e', 's', 't', ' ', 'T', 'r', 'a', 'i', 'n', 'i', 'n', 'g', ' ', 'C', 'o', 'm', 'p', 'a', 'n', 'y', ' ', 'B', 'r', 'a', 'i', 'n', ' ', 'M', 'e', 'n', 't', 'o', 'r', 's']
+arr.filter(e=>!(e=='a' || e =='e' || e=='i' || e =='o' || e =='u'));
+(25) ['B', 's', 't', ' ', 'T', 'r', 'n', 'n', 'g', ' ', 'C', 'm', 'p', 'n', 'y', ' ', 'B', 'r', 'n', ' ', 'M', 'n', 't', 'r', 's']
+arr.filter(e=>!(e=='a' || e =='e' || e=='i' || e =='o' || e =='u')).map(e=>e.toUpperCase());
+(25) ['B', 'S', 'T', ' ', 'T', 'R', 'N', 'N', 'G', ' ', 'C', 'M', 'P', 'N', 'Y', ' ', 'B', 'R', 'N', ' ', 'M', 'N', 'T', 'R', 'S']
+arr.filter(e=>!(e=='a' || e =='e' || e=='i' || e =='o' || e =='u')).map(e=>e.toUpperCase()).reverse();
+(25) ['S', 'R', 'T', 'N', 'M', ' ', 'N', 'R', 'B', ' ', 'Y', 'N', 'P', 'M', 'C', ' ', 'G', 'N', 'N', 'R', 'T', ' ', 'T', 'S', 'B']
+arr.filter(e=>!(e=='a' || e =='e' || e=='i' || e =='o' || e =='u')).map(e=>e.toUpperCase()).reverse().join('');
+'SRTNM NRB YNPMC GNNRT TSB'
+str.split('').filter(e=>!(e=='a' || e =='e' || e=='i' || e =='o' || e =='u')).map(e=>e.toUpperCase()).reverse().join('');
+'SRTNM NRB YNPMC GNNRT TSB'
+"amit".toUpperCase().substring(1).length;
+3
