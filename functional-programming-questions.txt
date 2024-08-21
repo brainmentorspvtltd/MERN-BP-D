@@ -1,0 +1,104 @@
+Task: Given a string, create a pipeline of functions that:
+	•	Removes all vowels.
+	•	Converts the string to uppercase.
+	•	Reverses the string.
+	•	Example Input: “Best Training Company Brain Mentors”
+	•	Example Output: "Bst Trnng Cmpny Brn Mntrs"
+
+
+
+
+
+Flatten a Nested Array
+
+	•	Task: Write a recursive function that flattens a nested array into a single array using functional programming principles.
+	•	Example Input: [1, [2, [3, 4], 5], 6]
+	•	Example Output: [1, 2, 3, 4, 5, 6]
+
+
+Task: Given an array of strings, group them by their first letter and count how many strings start with each letter.
+	•	Example Input: ["apple", "banana", "apricot", "blueberry", "cherry"]
+	•	Example Output: { a: 2, b: 2, c: 1 }
+
+
+
+Remove Duplicates from an Array
+
+	•	Task: Write a function to remove duplicates from an array without using loops, only functional methods like filter and indexOf.
+	•	Example Input: [1, 2, 2, 3, 4, 4, 5]
+	•	Example Output: [1, 2, 3, 4, 5]
+
+
+Sorting an Array of Objects
+
+	•	Task: Given an array of objects representing people with properties name and age, use sort to order the people by age and then by name if ages are equal.
+	•	Example Input: [{ name: "John", age: 25 }, { name: "Jane", age: 22 }, { name: "Doe", age: 25 }]
+	•	Example Output: [{ name: "Jane", age: 22 }, { name: "Doe", age: 25 }, { name: "John", age: 25 }]
+
+
+Calculate the Running Total
+
+	•	Task: Given an array of numbers, use reduce to create a new array that represents the running total.
+	•	Example Input: [1, 2, 3, 4]
+	•	Example Output: [1, 3, 6, 10]
+
+
+
+Implementing a Custom filter Function
+
+	•	Task: Implement your own version of the filter function using recursion, not using any loops.
+	•	Example Input: customFilter([1, 2, 3, 4, 5], x => x % 2 === 0)
+	•	Example Output: [2, 4]
+
+
+Counting Word Frequency
+
+	•	Task: Given a string of text, return an object where the keys are the words and the values are the number of times each word appears.
+	•	Example Input: "hello world hello"
+	•	Example Output: { hello: 2, world: 1 }
+
+
+Memoization
+
+	•	Task: Implement a function that caches the results of previous function calls to avoid redundant calculations (memoization).
+	•	Example: Use memoization to optimize a recursive Fibonacci function.
+
+
+
+Zipping Arrays
+
+	•	Task: Implement a zip function that takes two arrays and returns an array of pairs.
+	•	Example Input: zip([1, 2, 3], ['a', 'b', 'c'])
+	•	Example Output: [[1, 'a'], [2, 'b'], [3, 'c']]
+
+
+Functional Map of Objects
+
+	•	Task: Given an array of objects, use functional programming to transform the objects based on a certain condition.
+	•	Example: Increase the salary of all employees by 10% who are over 30 years old
+
+
+
+*******************************
+
+What is a pure function? Can you provide an example in JavaScript?
+Explain the concept of higher-order functions. Can you give an example?
+What is the difference between map, filter, and reduce methods?
+
+Given an array of numbers,   create a new array with each number doubled. Then  create another  new array of only the doubled numbers that are greater than 10.
+
+Given an array of objects with a name property, sort the array by the names in alphabetical order.
+
+Given an array of numbers,  find the maximum number in the array.
+
+Given an array of numbers,  check if there is at least one negative number in the array.
+
+Given an array of strings,   check if all strings have a length greater than 3.
+
+Given an array of user objects with age property, get users older than 18, then
+  get an array of their names.
+
+Given an array of strings,  count the occurrences of each string in the array.
+
+Given an array of numbers,  square each number, then  keep numbers greater than 20, 
+and finally to find their product.
