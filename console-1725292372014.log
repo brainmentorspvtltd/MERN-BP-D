@@ -1,0 +1,57 @@
+// Sync
+console.log('Hello js ');
+console.log('hi js ');
+var a = 10;
+var b = 20;
+var c = a + b;
+console.log(c);
+VM300:2 Hello js 
+VM300:3 hi js 
+VM300:7 30
+undefined
+console.log('I am Sync ');
+setTimeout(function(){
+        console.log('Set timeout call ');
+},2000);
+console.log('I am Sync2 ');
+
+
+
+
+VM491:1 I am Sync 
+VM491:5 I am Sync2 
+undefined
+VM491:3 Set timeout call 
+Math.sqrt(49);
+7
+var t= Math.sqrt(49);
+console.log(t);
+VM641:2 7
+undefined
+fetch('https://www.flipkart.com/mens-footwear/casual-shoes/pr?sid=osp%2Ccil%2Ce1f&otracker=nmenu_sub_Men_0_Casual+Shoes&p%5B%5D=facets.price_range.from%3DMin&p%5B%5D=facets.price_range.to%3D2000&p%5B%5D=facets.brand%255B%255D%3DPUMA');
+console.log('Done ');
+VM724:2 Done 
+undefined
+about:blank:1 Access to fetch at 'https://www.flipkart.com/mens-footwear/casual-shoes/pr?sid=osp%2Ccil%2Ce1f&otracker=nmenu_sub_Men_0_Casual+Shoes&p%5B%5D=facets.price_range.from%3DMin&p%5B%5D=facets.price_range.to%3D2000&p%5B%5D=facets.brand%255B%255D%3DPUMA' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+VM724:1 
+        
+        
+       GET https://www.flipkart.com/mens-footwear/casual-shoes/pr?sid=osp%2Ccil%2Ce1f&otracker=nmenu_sub_Men_0_Casual+Shoes&p%5B%5D=facets.price_range.from%3DMin&p%5B%5D=facets.price_range.to%3D2000&p%5B%5D=facets.brand%255B%255D%3DPUMA net::ERR_FAILED 200 (OK)
+(anonymous) @ VM724:1
+VM724:1 
+        
+        
+       
+        
+       Uncaught (in promise) TypeError: Failed to fetch
+    at <anonymous>:1:1
+(anonymous) @ VM724:1
+var t= Math.sqrt(49);
+console.log(t);
+VM778:2 7
+undefined
+// Thread
+setTimeout(function(){
+    
+}, 3000);
+2
