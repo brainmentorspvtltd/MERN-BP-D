@@ -1,0 +1,101 @@
+// class Person , class Student
+undefined
+function Person(name, address, phone){
+    this.name = name;
+    this.address = address;
+    this.phone = phone;
+}
+Person.prototype.show = function(){
+    console.log('Id ', this.name , 'Address ', this.address, 'Phone ', this.phone);
+}
+function Student(rollno, course, marks,name, address, phone){
+    // super
+    Person.call(this,name, address, phone );
+    this.course= course;
+    this.rollno = rollno;
+    this.marks = marks;
+}
+Student.prototype.show = function(){
+    Person.prototype.show.call(this);
+    console.log('Rollno ' , this.rollno);
+     console.log('Name ' , this.name);
+    console.log("Address ", this.address);
+    console.log("Phone ", this.phone);
+    console.log("Course ", this.course);
+    let total = 0;
+    for(let mark of this.marks){
+        total = total + mark;
+    }
+    console.log("total marks ",total);
+    console.log("Percentage ", total/marks.length);
+}
+Student.prototype.__proto__ = Person.prototype; // extends
+var ram = new Student(1001, 'JS',[90,88,99], "Ram", "Delhi",22222);
+{show: ƒ}
+ram;
+Student {name: 'Ram', address: 'Delhi', phone: 22222, course: 'JS', rollno: 1001, …}address: "Delhi"course: "JS"marks: (3) [90, 88, 99]name: "Ram"phone: 22222rollno: 1001[[Prototype]]: Person
+ram.show();
+VM1665:7 Id  Ram Address  Delhi Phone  22222
+VM1665:18 Rollno  1001
+VM1665:19 Name  Ram
+VM1665:20 Address  Delhi
+VM1665:21 Phone  22222
+VM1665:22 Course  JS
+VM1665:27 total marks  277
+VM1665:28 Uncaught ReferenceError: marks is not defined
+    at Student.show (<anonymous>:28:38)
+    at <anonymous>:1:5
+Student.show @ VM1665:28
+(anonymous) @ VM1704:1
+function Person(name, address, phone){
+    this.name = name;
+    this.address = address;
+    this.phone = phone;
+}
+Person.prototype.show = function(){
+    console.log('Id ', this.name , 'Address ', this.address, 'Phone ', this.phone);
+}
+function Student(rollno, course, marks,name, address, phone){
+    // super
+    Person.call(this,name, address, phone );
+    this.course= course;
+    this.rollno = rollno;
+    this.marks = marks;
+}
+Student.prototype.show = function(){
+    Person.prototype.show.call(this);
+    console.log('Rollno ' , this.rollno);
+     console.log('Name ' , this.name);
+    console.log("Address ", this.address);
+    console.log("Phone ", this.phone);
+    console.log("Course ", this.course);
+    let total = 0;
+    for(let mark of this.marks){
+        total = total + mark;
+    }
+    console.log("total marks ",total);
+    console.log("Percentage ", total/this.marks.length);
+}
+Student.prototype.__proto__ = Person.prototype; // extends
+var ram = new Student(1001, 'JS',[90,88,99], "Ram", "Delhi",22222);
+{show: ƒ}
+ram.show();
+VM1715:7 Id  Ram Address  Delhi Phone  22222
+VM1715:18 Rollno  1001
+VM1715:19 Name  Ram
+VM1715:20 Address  Delhi
+VM1715:21 Phone  22222
+VM1715:22 Course  JS
+VM1715:27 total marks  277
+VM1715:28 Percentage  92.33333333333333
+undefined
+ram;
+Student {name: 'Ram', address: 'Delhi', phone: 22222, course: 'JS', rollno: 1001, …}
+ram.__proto__;
+Person {show: ƒ}
+Person.prototype;
+{show: ƒ}
+ram.__proto__.__proto__;
+{show: ƒ}show: ƒ ()constructor: ƒ Person(name, address, phone)[[Prototype]]: Object
+ram.__proto__ == Student.prototype;
+true

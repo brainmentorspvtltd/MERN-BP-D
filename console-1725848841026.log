@@ -1,0 +1,277 @@
+class A{
+    
+}
+class B extends A{
+    
+}
+undefined
+function createEmp(obj){
+    
+}
+var x = createEmp({id:1001, name:'Ram', salary : 8888});
+undefined
+class Emp{
+    constructor(id, name){
+        this.id = id;
+        this.name = name
+    }
+}
+undefined
+var ram = new Emp(101, 'Ram');
+undefined
+ram;
+Emp {id: 101, name: 'Ram'}
+var shyam = new Emp(102, 'Ram');
+undefined
+var shyam = new Emp(102, 'Shyam');
+undefined
+ram;
+Emp {id: 101, name: 'Ram'}
+shyam;
+Emp {id: 102, name: 'Shyam'}
+ram.salary = 44444;
+44444
+ram;
+Emp {id: 101, name: 'Ram', salary: 44444}
+shyam;
+Emp {id: 102, name: 'Shyam'}
+B.prototype.__proto__ 
+{}constructor: class A[[Prototype]]: Object
+B.prototype.__proto__  == A.prototype;
+true
+class A{
+    show(){
+        console.log("A Show ");
+    }
+}
+undefined
+class B extends A{
+    show(){
+        console.log("B Show ");
+    }
+}
+undefined
+var b = new B();
+undefined
+b.show();
+VM822:3 B Show 
+undefined
+b.__proto == B.prototype;
+false
+b.__proto__ == B.prototype;
+true
+b.__proto__.show;
+ƒ show(){
+        console.log("B Show ");
+    }
+b.__proto__.__proto__;
+{show: ƒ}
+b.__proto__.__proto__.show;
+ƒ show(){
+        console.log("A Show ");
+    }
+class B extends A{
+    show(){
+        super.show();
+        console.log("B Show ");
+    }
+}
+undefined
+b.show();
+VM822:3 B Show 
+undefined
+var b = new B();
+undefined
+b.show();
+VM741:3 A Show 
+VM1059:4 B Show 
+undefined
+typeof this;
+'object'
+b;
+B {}
+class Person{
+    constructor(name , address, phone){
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+    }
+    show(){
+        console.log('Id ', this.name , 'Address ', this.address, 'Phone ', this.phone);
+    }
+}
+class Student extends Person{
+    constructor(rollno, course, marks, name, address, phone){
+        super(name, address, phone); // call parent constructor
+         this.course= course;
+    this.rollno = rollno;
+    this.marks = marks;
+    }
+    show(){
+        console.log('Rollno ',this.rollno);
+         console.log('Name ',this.name);
+    }
+}
+var ram = new Student(1001, 'JS',[90,88,99], "Ram", "Delhi",22222);
+undefined
+ram;
+Student {name: 'Ram', address: 'Delhi', phone: 22222, course: 'JS', rollno: 1001, …}
+class Person{
+    constructor(name , address, phone){
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+    }
+    show(){
+        console.log('Id ', this.name , 'Address ', this.address, 'Phone ', this.phone);
+    }
+}
+class Student extends Person{
+    constructor(rollno, course, marks, name, address, phone){
+        super(name, address, phone); // call parent constructor
+         this.course= course;
+    this.rollno = rollno;
+    this.marks = marks;
+    }
+    show(){
+        console.log('Rollno ' , this.rollno);
+     console.log('Name ' , this.name);
+    console.log("Address ", this.address);
+    console.log("Phone ", this.phone);
+    console.log("Course ", this.course);
+    let total = 0;
+    for(let mark of this.marks){
+        total = total + mark;
+    }
+    console.log("total marks ",total);
+    console.log("Percentage ", total/marks.length);
+    }
+}
+var ram = new Student(1001, 'JS',[90,88,99], "Ram", "Delhi",22222);
+undefined
+ram;
+Student {name: 'Ram', address: 'Delhi', phone: 22222, course: 'JS', rollno: 1001, …}
+ram.show();
+VM1884:19 Rollno  1001
+VM1884:20 Name  Ram
+VM1884:21 Address  Delhi
+VM1884:22 Phone  22222
+VM1884:23 Course  JS
+VM1884:28 total marks  277
+VM1884:29 Uncaught ReferenceError: marks is not defined
+    at Student.show (<anonymous>:29:38)
+    at <anonymous>:1:5
+show @ VM1884:29
+(anonymous) @ VM1927:1
+class Person{
+    constructor(name , address, phone){
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+    }
+    show(){
+        console.log('Id ', this.name , 'Address ', this.address, 'Phone ', this.phone);
+    }
+}
+class Student extends Person{
+    constructor(rollno, course, marks, name, address, phone){
+        super(name, address, phone); // call parent constructor
+         this.course= course;
+    this.rollno = rollno;
+    this.marks = marks;
+    }
+    show(){
+        console.log('Rollno ' , this.rollno);
+     console.log('Name ' , this.name);
+    console.log("Address ", this.address);
+    console.log("Phone ", this.phone);
+    console.log("Course ", this.course);
+    let total = 0;
+    for(let mark of this.marks){
+        total = total + mark;
+    }
+    console.log("total marks ",total);
+    console.log("Percentage ", total/this.marks.length);
+    }
+}
+var ram = new Student(1001, 'JS',[90,88,99], "Ram", "Delhi",22222);
+undefined
+ram.show();
+VM1940:19 Rollno  1001
+VM1940:20 Name  Ram
+VM1940:21 Address  Delhi
+VM1940:22 Phone  22222
+VM1940:23 Course  JS
+VM1940:28 total marks  277
+VM1940:29 Percentage  92.33333333333333
+undefined
+class Person{
+    constructor(name , address, phone){
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+    }
+    show(){
+        console.log('Id ', this.name , 'Address ', this.address, 'Phone ', this.phone);
+    }
+}
+class Student extends Person{
+    constructor(rollno, course, marks, name, address, phone){
+        super(name, address, phone); // call parent constructor
+         this.course= course;
+    this.rollno = rollno;
+    this.marks = marks;
+    }
+    show(){
+        super.show();
+        console.log('Rollno ' , this.rollno);
+     //console.log('Name ' , this.name);
+    //console.log("Address ", this.address);
+    //console.log("Phone ", this.phone);
+    console.log("Course ", this.course);
+    let total = 0;
+    for(let mark of this.marks){
+        total = total + mark;
+    }
+    console.log("total marks ",total);
+    console.log("Percentage ", total/this.marks.length);
+    }
+}
+var ram = new Student(1001, 'JS',[90,88,99], "Ram", "Delhi",22222);
+undefined
+ram.show();
+VM2006:8 Id  Ram Address  Delhi Phone  22222
+VM2006:20 Rollno  1001
+VM2006:24 Course  JS
+VM2006:29 total marks  277
+VM2006:30 Percentage  92.33333333333333
+undefined
+Student.prototype.__proto__ == Person.prototype;
+true
+ram;
+Student {name: 'Ram', address: 'Delhi', phone: 22222, course: 'JS', rollno: 1001, …}address: "Delhi"course: "JS"marks: (3) [90, 88, 99]name: "Ram"phone: 22222rollno: 1001[[Prototype]]: Person
+ram.show();
+VM2006:8 Id  Ram Address  Delhi Phone  22222
+VM2006:20 Rollno  1001
+VM2006:24 Course  JS
+VM2006:29 total marks  277
+VM2006:30 Percentage  92.33333333333333
+undefined
+Student.prototype.grade = function(){
+    console.log(this.name , this.marks, "Grade ");
+}
+ƒ (){
+    console.log(this.name , this.marks, "Grade ");
+}
+var ram = new Student(1001, 'JS',[90,88,99], "Ram", "Delhi",22222);
+undefined
+ram.show();
+VM2006:8 Id  Ram Address  Delhi Phone  22222
+VM2006:20 Rollno  1001
+VM2006:24 Course  JS
+VM2006:29 total marks  277
+VM2006:30 Percentage  92.33333333333333
+undefined
+ram.grade();
+VM2392:2 Ram (3) [90, 88, 99] Grade 
+undefined
