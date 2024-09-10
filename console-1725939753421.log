@@ -1,0 +1,35 @@
+function show(x=0, y = 0){
+    return x + y;
+}
+show(10,20);
+30
+show();
+0
+show(10);
+10
+function add(x,y){
+    return (x||0 + y ||0);
+}
+undefined
+add(10,2);
+10
+function add(x,y){
+    return (x||0) + (y ||0);
+}
+undefined
+add(10,2);
+12
+add();
+0
+add(10);
+10
+var prices = [10,9999,445454,64645664,43243242);
+VM553:1 Uncaught SyntaxError: Unexpected token ')'
+var prices = [10,9999,445454,64645664,43243242];
+undefined
+prices.map(price=>price.toLocaleString('hi'));
+(5) ['10', '9,999', '4,45,454', '6,46,45,664', '4,32,43,242']
+var r = prices.map(price=>price.toLocaleString('hi'));
+undefined
+r == prices;
+false

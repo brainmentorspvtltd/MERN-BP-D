@@ -1,0 +1,102 @@
+function cube(num, time){
+    const pr = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            if(num>1000000){
+                reject("Number is Too Big ");
+            }
+            resolve(num **3);
+        }, time);
+    });
+    return pr;
+}
+undefined
+cube(3,1000);
+Promise {<pending>}
+const p = cube(3,1000);
+p.then(data=>console.log(data)).catch(err=>console.log(err));
+Promise {<pending>}
+VM586:2 27
+const p = Promise.all([cube(3,3000), cube(2,4000), cube(5,1000)]);
+p.then(d=>console.log(d)).catch(err=>console.log(err));
+Promise {<pending>}
+VM973:2 (3) [27, 8, 125]
+function cube(num, time){
+    const pr = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            if(num>10){
+                reject("Number is Too Big ");
+            }
+            resolve(num **3);
+        }, time);
+    });
+    return pr;
+}
+undefined
+const p = Promise.all([cube(3,3000), cube(12,4000), cube(5,1000)]);
+p.then(d=>console.log(d)).catch(err=>console.log(err));
+Promise {<pending>}
+VM995:2 Number is Too Big 
+const p = Promise.allSettled([cube(3,3000), cube(12,4000), cube(5,1000)]);
+p.then(d=>console.log(d)).catch(err=>console.log(err));
+Promise {<pending>}
+VM1019:2 (3) [{…}, {…}, {…}]0: {status: 'fulfilled', value: 27}1: {status: 'rejected', reason: 'Number is Too Big '}2: {status: 'fulfilled', value: 125}length: 3[[Prototype]]: Array(0)
+const p = Promise.race([cube(3,3000), cube(12,4000), cube(5,1000)]);
+p.then(d=>console.log(d)).catch(err=>console.log(err));
+Promise {<pending>}
+VM1026:2 125
+const p = Promise.race([cube(3,3000), cube(2,4000), cube(15,1000)]);
+p.then(d=>console.log(d)).catch(err=>console.log(err));
+Promise {<pending>}
+VM1043:2 Number is Too Big 
+const p = Promise.any([cube(3,3000), cube(2,4000), cube(15,1000)]);
+p.then(d=>console.log(d)).catch(err=>console.log(err));
+Promise {<pending>}
+VM1052:2 27
+const p = Promise.any([cube(13,3000), cube(12,4000), cube(15,1000)]);
+p.then(d=>console.log(d)).catch(err=>console.log(err));
+Promise {<pending>}
+VM1071:2 AggregateError: All promises were rejected
+function cube(num, time){
+    const pr = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            if(num>1000000){
+                reject("Number is Too Big ");
+            }
+            resolve(num **3);
+        }, time);
+    });
+    return pr;
+}
+undefined
+async function total(){
+    try{
+    const t = await cube(2,1000);
+        const r = await cube(r, 9000);
+        return r;
+    }
+    catch(err){
+        console.log('Error is ', err);
+    }
+}
+undefined
+const p = total();
+p.then(data=>console.log(data)).catch(err=>console.log(err));
+Promise {<pending>}
+VM1364:8 Error is  ReferenceError: Cannot access 'r' before initialization
+    at total (<anonymous>:4:30)
+VM1671:2 undefined
+async function total(){
+    try{
+    const t = await cube(2,1000);
+        const r = await cube(t, 9000);
+        return r;
+    }
+    catch(err){
+        console.log('Error is ', err);
+    }
+}
+undefined
+const p = total();
+p.then(data=>console.log(data)).catch(err=>console.log(err));
+Promise {<pending>}
+VM1687:2 512
