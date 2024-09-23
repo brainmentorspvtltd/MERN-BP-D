@@ -1,0 +1,38 @@
+function whoAmI(){
+    console.log("I am ",this);
+}
+undefined
+whoAmI(); // window.whoAmI() // this binding
+VM138:2 I am  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+// Implicit Binding
+undefined
+var obj = {
+    show(){
+        console.log(" I am ",this);
+    }
+}
+undefined
+obj.show() ; // Implicit Binding
+VM350:3  I am  {show: ƒ}
+undefined
+// Explicit Binding
+undefined
+function test(){
+    console.log(' i am ', this);
+}
+undefined
+var a = new test();
+VM559:2  i am  test {}
+undefined
+var b = new test();
+VM559:2  i am  test {}
+undefined
+typeof a;
+'object'
+typeof b;
+'object'
+a instanceof test;
+true
+b instanceof test;
+true

@@ -1,0 +1,157 @@
+// OOJS
+undefined
+var amit = {};
+undefined
+typeof amit;
+'object'
+// Object Literal
+undefined
+amit instanceof Object;
+true
+typeof Object;
+'function'
+const triMath = {
+    sin(){},cos(){}
+}
+undefined
+triMath.cos();
+undefined
+// NameSpacing
+undefined
+const cartOperations = {
+    add(){
+        
+    },
+    remove(){
+        
+    },
+    update(){
+        
+    }
+}
+
+undefined
+cartOperations;
+{add: ƒ, remove: ƒ, update: ƒ}add: ƒ add()remove: ƒ remove()update: ƒ update()[[Prototype]]: Object
+function Student(rollno, name, course){
+    console.log('this is', this); // Student {}
+}
+var ram = new Student(1001, 'Ram', 'JS');
+VM754:2 this is Student {}
+undefined
+var tom = {};
+undefined
+tom ;
+{}
+ram  instanceof Student;
+true
+function Student(rollno, name, course){
+    console.log('this is', this); // Student {}
+    this.rollno = rollno; // this.key = value
+    this.name = name;
+    this.course = course;
+}
+var ram = new Student(1001, 'Ram', 'JS');
+VM924:2 this is Student {}
+undefined
+ram;
+Student {rollno: 1001, name: 'Ram', course: 'JS'}
+// Function Constructor
+function Student(rollno, name, course){
+   // console.log('this is', this); // Student {}
+    this.rollno = rollno; // this.key = value
+    this.name = name;
+    this.course = course;
+}
+var ram = new Student(1001, 'Ram', 'JS');
+undefined
+var shyam = new Student(1002, 'Shyam', 'JS')
+undefined
+shyam;
+Student {rollno: 1002, name: 'Shyam', course: 'JS'}
+ram;
+Student {rollno: 1001, name: 'Ram', course: 'JS'}
+ram == student;
+VM1163:1 Uncaught ReferenceError: student is not defined
+    at <anonymous>:1:8
+(anonymous) @ VM1163:1
+ram == shyam;
+false
+ram;
+Student {rollno: 1001, name: 'Ram', course: 'JS'}
+shyam;
+Student {rollno: 1002, name: 'Shyam', course: 'JS'}
+shyam.rollno++;
+1002
+ram;
+Student {rollno: 1001, name: 'Ram', course: 'JS'}
+shyam;
+Student {rollno: 1003, name: 'Shyam', course: 'JS'}
+shyam.city = 'Delhi';
+'Delhi'
+ram;
+Student {rollno: 1001, name: 'Ram', course: 'JS'}
+shyam;
+Student {rollno: 1003, name: 'Shyam', course: 'JS', city: 'Delhi'}
+// Function Constructor
+function Student(rollno, name, course){
+   // console.log('this is', this); // Student {}
+    this.rollno = rollno; // this.key = value
+    this.name = name;
+    this.course = course;
+    this.print = function(){
+        console.log('Rollno ' ,this.rollno, ' Name ',this.name, ' Course ', this.course);
+    }
+}
+var ram = new Student(1001, 'Ram', 'JS');
+undefined
+ram;
+Student {rollno: 1001, name: 'Ram', course: 'JS', print: ƒ}course: "JS"name: "Ram"print: ƒ ()rollno: 1001[[Prototype]]: Object
+var shyam = new Student(1002, 'Shyam', 'ReactJS');
+undefined
+shyam;
+Student {rollno: 1002, name: 'Shyam', course: 'ReactJS', print: ƒ}course: "ReactJS"name: "Shyam"print: ƒ ()rollno: 1002[[Prototype]]: Object
+ram.print();
+VM1680:8 Rollno  1001  Name  Ram  Course  JS
+undefined
+shyam.print();
+VM1680:8 Rollno  1002  Name  Shyam  Course  ReactJS
+undefined
+// Function Constructor
+function Student(rollno, name, course){
+   // console.log('this is', this); // Student {}
+    this.rollno = rollno; // this.key = value
+    this.name = name;
+    this.course = course;
+    
+}
+Student.prototype.print = function(){
+        console.log('Rollno ' ,this.rollno, ' Name ',this.name, ' Course ', this.course);
+    }
+var ram = new Student(1001, 'Ram', 'JS');
+ƒ (){
+        console.log('Rollno ' ,this.rollno, ' Name ',this.name, ' Course ', this.course);
+    }
+typeof Student;
+'function'
+Student.prototype;
+{print: ƒ}
+typeof Student.prototype;
+'object'
+Student.prototype instanceof Object;
+true
+Student.prototype instanceof Student;
+false
+var shyam = new Student(1002, 'Shyam', 'ReactJS');
+undefined
+shyam;
+Student {rollno: 1002, name: 'Shyam', course: 'ReactJS'}
+shyam.rollno;
+1002
+shyam.print();
+VM1980:10 Rollno  1002  Name  Shyam  Course  ReactJS
+undefined
+shyam.__proto__ == Student.prototype;
+true
+shyam.__proto__ === Student.prototype;
+true
