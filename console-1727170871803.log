@@ -1,0 +1,179 @@
+function Student(rollno , name, course){
+    this.rollno = rollno;
+    this.name = name;
+    this.course = course;
+}
+Student.prototype.print = function(){
+    console.log(`RollNo ${this.rollno} Name ${this.name} Course ${this.course}`);
+}
+ƒ (){
+    console.log(`RollNo ${this.rollno} Name ${this.name} Course ${this.course}`);
+}
+var ram = new Student(1001, 'Ram', 'JS');
+undefined
+ram.print();
+VM363:7 RollNo 1001 Name Ram Course JS
+undefined
+function print(){
+    console.log("I am Print ");
+}
+undefined
+window.print();
+VM601:2 I am Print 
+undefined
+function Student(rollno , name, course){
+    this.rollno = rollno;
+    this.name = name;
+    this.course = course;
+    this.print= function(){
+        console.log('this print ', this);
+    }
+}
+Student.prototype.print = function(){
+    console.log(`RollNo ${this.rollno} Name ${this.name} Course ${this.course}`);
+}
+ƒ (){
+    console.log(`RollNo ${this.rollno} Name ${this.name} Course ${this.course}`);
+}
+ram.__proto__ == Student.prototype;
+false
+var ram = new Student(1001, 'Ram', 'JS');
+undefined
+ram.__proto__;
+{print: ƒ}
+ram.__proto__ == Student.prototype;
+true
+typeof ram;
+'object'
+typeof Student.prototype;
+'object'
+ram.__proto__.__proto__ == Object.prototype;
+true
+var t = {id:1001, name:'R'};
+undefined
+t;
+{id: 1001, name: 'R'}id: 1001name: "R"[[Prototype]]: Object
+t instanceof Object;
+true
+t.__proto__ == Object.prototype;
+true
+ram;
+Student {rollno: 1001, name: 'Ram', course: 'JS', print: ƒ}
+ram.__proto__ == Student.prototype;
+true
+var shyam =new Student(1002, "Shyam","React ");
+undefined
+ram;
+Student {rollno: 1001, name: 'Ram', course: 'JS', print: ƒ}
+shyam;
+Student {rollno: 1002, name: 'Shyam', course: 'React ', print: ƒ}
+ram.__proto__ == shyam.__proto__;
+true
+ram.__proto__ == Student.prototype;
+true
+shyam.__proto__ == Student.prototype;
+true
+Student.prototype.__proto__ == Object.prototype;
+true
+ram.__proto__.__proto__ == Object.prototype;
+true
+ram.__proto__.__proto__== shyam.__proto__.__proto__;
+true
+ram.__proto__.__proto__.__proto__;
+null
+ram.toString();
+'[object Object]'
+Student.prototype;
+{print: ƒ}
+Student.prototype.constructor;
+ƒ Student(rollno , name, course){
+    this.rollno = rollno;
+    this.name = name;
+    this.course = course;
+    this.print= function(){
+        console.log('this print ', this);
+    }
+}
+typeof Student;
+'function'
+console.dir(Student);
+VM2618:1 ƒ Student(rollno , name, course)arguments: nullcaller: nulllength: 3name: "Student"prototype: {print: ƒ}[[FunctionLocation]]: VM748:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1]
+undefined
+Student.length;
+3
+Student.name;
+'Student'
+Student.prototype;
+{print: ƒ}
+console.dir(Student);
+VM2716:1 ƒ Student(rollno , name, course)arguments: nullcaller: nulllength: 3name: "Student"prototype: {print: ƒ}print: ƒ ()constructor: ƒ Student(rollno , name, course)[[Prototype]]: Object[[FunctionLocation]]: VM748:1[[Prototype]]: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()[[FunctionLocation]]: [[Prototype]]: Object[[Scopes]]: Scopes[0][[Scopes]]: Scopes[1]
+undefined
+Student.__proto__;
+ƒ () { [native code] }
+Object.prototype;
+{__defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, __lookupSetter__: ƒ, …}constructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+class Employee{
+    constructor(id, name, salary){
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+    show(){
+       console.log(this.id, this.name); 
+    }
+}
+undefined
+typeof Employee;
+'function'
+Employee.prototype;
+{show: ƒ}
+var ram = new Employee(1001, 'Ram', 9999);
+undefined
+ram.print();
+VM3346:1 Uncaught TypeError: ram.print is not a function
+    at <anonymous>:1:5
+(anonymous) @ VM3346:1
+ram.show();
+VM3040:8 1001 'Ram'
+undefined
+class Employee{
+    constructor(id, name, salary){
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+    show(){
+       console.log(this.id, this.name); 
+    }
+    disp(){
+        console.log("I am Disp ");
+    }
+    output(){
+        console.log("I am Output ");
+    }
+}
+undefined
+var ram = new Employee(1002,'Ram',8888);
+undefined
+ram;
+Employee {id: 1002, name: 'Ram', salary: 8888}
+ram.show();
+VM3489:8 1002 'Ram'
+undefined
+var key  = "show";
+undefined
+ram[key]();
+VM3489:8 1002 'Ram'
+undefined
+key = "output";
+'output'
+ram[key]();
+VM3489:14 I am Output 
+undefined
+class A{
+    
+}
+class B extends A{}
+undefined
+B.prototype.__proto__;
+{}constructor: class A[[Prototype]]: Object
