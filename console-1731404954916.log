@@ -1,0 +1,68 @@
+function show(obj){
+    console.log(obj.name, obj.age, obj.city);
+}
+show({name:'Ram', age:20, city:'Delhi'});
+VM265:2 Ram 20 Delhi
+undefined
+function show({name, age, city}){
+   console.log(name, age, city);
+}
+show({name:'Ram', age:20, city:'Delhi'});
+VM362:2 Ram 20 Delhi
+undefined
+    var e= {id:1001, name:'Tim'};
+undefined
+var {id, name} = e;
+undefined
+id;
+1001
+name;
+'Tim'
+var r = e.id;
+undefined
+var t = [100,200,300,400,500];
+undefined
+var h = t[1];
+undefined
+h;
+200
+var [x,y,z,,c] = t;
+undefined
+x
+100
+y
+200
+z
+300
+c
+500
+Math.random();
+0.21189100459947108
+Math.random();
+0.9587853610114039
+Math.random();
+0.21553086693517032
+Math.random();
+0.7011232902937308
+Math.random();
+0.37938891598279234
+Math.random();
+0.08815929524010024
+Math.random();
+0.5712264653809902
+Math.random();
+0.2635409570599998
+Math.random() * 16;
+10.279606738757376
+Math.random() * 16;
+6.139636078549273
+Math.random() * 16;
+4.64265546233284
+Math.random() * 16;
+0.23421510905409448
+Math.random() * 16;
+5.992309734914397
+Math.random() * 16;
+15.175099719861816
+Math.random() * 16;
+3.9651767191461396
